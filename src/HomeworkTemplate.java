@@ -1,10 +1,18 @@
-import java.util.Scanner;
+
 
 public class HomeworkTemplate {
     public static void main(String[] args) {
 
-        int correctCount = 0, wrongCount = 0;
+        Questions test = new Questions();
 
+        for (int i = 0; i < 3; i++) {
+            test.showQuestion(i);
+            test.inputResult();
+        }
+
+    }
+}
+       /**
         String[][]questionsAndAnswers = {
                 {"1. Сколько дней в году?", "1) 214, 2) 365, 3) 456, 4) 9078", "2"},
                 {"2. Автором какой книги является Оскар Уайльд?", "1) Война и мир, 2) Муму, 3) Портрет Дориана Грея", "3"},
@@ -30,4 +38,5 @@ public class HomeworkTemplate {
         }
         System.out.println("Результат: правильно - " + correctCount + ", неправильно - " + wrongCount);
     }
-}
+        **/
+
