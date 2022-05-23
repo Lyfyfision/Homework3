@@ -7,9 +7,9 @@ public class HomeworkTemplate {
 
         for (int i = 0; i < 3; i++) {
             test.showQuestion(i);
-            test.inputResult();
+            test.inputAnswer(i);
         }
-
+        test.showResult();
     }
 }
        /**
