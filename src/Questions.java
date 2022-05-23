@@ -1,45 +1,14 @@
-import java.util.Scanner;
+public class Questions extends Answers{
 
-public class Questions extends Answers {
-
-    protected final String FIRST_QUESTION = "1. Сколько дней в году?";
-    protected final String SECOND_QUESTION = "2. Автором какой книги является Оскар Уайльд?";
-    protected final String THIRD_QUESTION = "3. В каком году произошла Октябрьская революция?";
+    private final String[][] QUESTIONS_AND_ANSWERS_ARRAY = {
+            {"1. Сколько дней в году?", "1) 214, 2) 365, 3) 456, 4) 9078"},
+            {"2. Автором какой книги является Оскар Уайльд?", "1) Война и мир, 2) Муму, 3) Портрет Дориана Грея"},
+            {"3. В каком году произошла Октябрьская революция?", "1) 1917, 2) 1743, 3) 2000, 4) 2134"}
+    };
 
     protected void showQuestion (int num) {
-        if (num == 0) {
-            System.out.println(FIRST_QUESTION);
-            System.out.println(FIRST_ANSWERS);
+            System.out.println(QUESTIONS_AND_ANSWERS_ARRAY[num][0]);
+            System.out.println(QUESTIONS_AND_ANSWERS_ARRAY[num][1]);
             System.out.println("Ваш ответ: ");
-        } else if (num == 1) {
-            System.out.println(SECOND_QUESTION);
-            System.out.println(SECOND_ANSWERS);
-            System.out.println("Ваш ответ: ");
-        } else if (num == 2) {
-            System.out.println(THIRD_QUESTION);
-            System.out.println(THIRD_ANSWERS);
-            System.out.println("Ваш ответ: ");
-        }
     }
-
-    protected void inputResult() {
-        int correctCount = 0, wrongCount = 0;
-        Scanner scan = new Scanner(System.in);
-        int inputAnswer = scan.nextInt();
-            if (i == 0 & inputAnswer == CORRECT_ANSWERS[0]) {
-                System.out.println("Правильно");
-                correctCount++;
-            } else if (i == 1 & inputAnswer == CORRECT_ANSWERS[1]) {
-                System.out.println("Правильно");
-                correctCount++;
-            } else if (i == 2 & inputAnswer == CORRECT_ANSWERS[2]) {
-                System.out.println("Правильно");
-                correctCount++;
-            } else
-                System.out.println("Неправильно");
-                wrongCount++;
-
-        System.out.println("Результат: правильно - " + correctCount + ", неправильно - " + wrongCount);
-    }
-
 }
