@@ -1,34 +1,13 @@
-import java.util.Scanner;
-
 public class Answers {
 
-    private final int[] CORRECT_ANSWERS_ARRAY = {2, 3, 1};
-    private int correctCount = 0, wrongCount = 0;
+    protected final String[]ANSWERS_ARRAY = {"1) 214, 2) 365, 3) 456, 4) 9078", "1) Война и мир, 2) Муму, 3) Портрет Дориана Грея",
+            "1) 1917, 2) 1743, 3) 2000, 4) 2134"};
 
-    protected void inputAnswer(int questionCounter) {
-        Scanner scan = new Scanner(System.in);
-        int inputAnswer = scan.nextInt();
-        if (questionCounter == 0 & inputAnswer == CORRECT_ANSWERS_ARRAY[0]) {
-            System.out.println("Правильно");
-            correctCount++;
-            return;
-        } else if (questionCounter == 1 & inputAnswer == CORRECT_ANSWERS_ARRAY[1]) {
-            System.out.println("Правильно");
-            correctCount++;
-            return;
-        } else if (questionCounter == 2 & inputAnswer == CORRECT_ANSWERS_ARRAY[2]) {
-            System.out.println("Правильно");
-            correctCount++;
-            return;
-        } else {
-            System.out.println("Неправильно");
-            wrongCount++;
-            return;
-        }
+    protected final int FIRST_ANSWER = 2;
+    protected final int SECOND_ANSWER = 3;
+    protected final int THIRD_ANSWER = 1;
+
+    public String getANSWERS_ARRAY(int num) {
+        return ANSWERS_ARRAY[num];
     }
-
-    protected void showResult() {
-        System.out.println("Результат: правильно - " + correctCount + ", неправильно - " + wrongCount);
-    }
-
 }

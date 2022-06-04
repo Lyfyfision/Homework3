@@ -1,14 +1,51 @@
+import java.util.Scanner;
+
 public class Questions extends Answers{
 
-    private final String[][] QUESTIONS_AND_ANSWERS_ARRAY = {
-            {"1. Сколько дней в году?", "1) 214, 2) 365, 3) 456, 4) 9078"},
-            {"2. Автором какой книги является Оскар Уайльд?", "1) Война и мир, 2) Муму, 3) Портрет Дориана Грея"},
-            {"3. В каком году произошла Октябрьская революция?", "1) 1917, 2) 1743, 3) 2000, 4) 2134"}
-    };
+    private final String[]QUESTIONS_ARRAY = {"1. Сколько дней в году?", "2. Автором какой книги является Оскар Уайльд?",
+            "3. В каком году произошла Октябрьская революция?"};
+    private int correctCount = 0;
+    private int wrongCount = 0;
 
-    protected void showQuestion (int num) {
-            System.out.println(QUESTIONS_AND_ANSWERS_ARRAY[num][0]);
-            System.out.println(QUESTIONS_AND_ANSWERS_ARRAY[num][1]);
+    public int getCorrectCount() {
+        return correctCount;
+    }
+
+    public int getWrongCount() {
+        return wrongCount;
+    }
+
+    boolean ask() {
+
+        boolean isInputAnswerRight = false;
+        Scanner sc = new Scanner(System.in);
+
+        for (int i = 0; i < 3; i++) {
+            System.out.println(getQUESTIONS_ARRAY(i));
+            System.out.println(getANSWERS_ARRAY(i));
             System.out.println("Ваш ответ: ");
+            int inputAnswer = sc.nextInt();
+            if(i == 0 & inputAnswer == FIRST_ANSWER) {
+                isInputAnswerRight = true;
+                correctCount++;
+                continue;
+            } else if (i == 1 & inputAnswer == SECOND_ANSWER) {
+                isInputAnswerRight = true;
+                correctCount++;
+                continue;
+            } else if (i == 2 & inputAnswer == THIRD_ANSWER) {
+                isInputAnswerRight = true;
+                correctCount++;
+                continue;
+            } else isInputAnswerRight = false; wrongCount++;{
+            }
+        }
+        return isInputAnswerRight;
+    }
+
+    public String getQUESTIONS_ARRAY(int num) {
+        return QUESTIONS_ARRAY[num];
     }
 }
+
+
