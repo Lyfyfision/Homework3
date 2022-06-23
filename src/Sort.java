@@ -34,7 +34,6 @@ public class Sort {
                         intListBubble.set(i, intListBubble.get(i + 1));
                         intListBubble.set(i + 1, temp);
                 }
-
             }
         }
         System.out.println("После сортировки (пузырьком): " + intListBubble.toString());
